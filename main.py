@@ -1,9 +1,14 @@
 import requests
 
 
-url = 'https://randomuser.me/api/?results=5&gender=female&nat=gb,us'
+url = 'https://randomuser.me/api/'
+poyload = {
+    'results':5,
+    'gender':'female',
+    'nat':'us,gb'
+}
 
-r = requests.get(url)
+r = requests.get(url,params=poyload)
 data = r.json()['results']
 
 for i in data:
